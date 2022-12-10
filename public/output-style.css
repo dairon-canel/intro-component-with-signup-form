@@ -740,6 +740,22 @@ video {
   line-height: 1.6rem;
 }
 
+.leading-\[2rem\] {
+  line-height: 2rem;
+}
+
+.leading-\[1\.5rem\] {
+  line-height: 1.5rem;
+}
+
+.leading-\[1\.2rem\] {
+  line-height: 1.2rem;
+}
+
+.leading-\[1\.3rem\] {
+  line-height: 1.3rem;
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: hsl(0 100% 100% / var(--tw-text-opacity));
