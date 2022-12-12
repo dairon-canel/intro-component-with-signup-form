@@ -12,7 +12,14 @@ body {
 }
 
 .invalid-form {
-  border-color: hsl(354, 100%, 66%);
+  border: 2px solid hsl(354, 100%, 66%) !important;
+}
+
+.invalid-form-icon {
+  background-image: url('/public/icon-error.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-x: calc(100% - 26px);
 }
 
 .hidden {

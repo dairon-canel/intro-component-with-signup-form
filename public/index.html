@@ -37,7 +37,7 @@
     </header>
     <main class="md:w-[33.75rem]">
       <h2
-        class="relative mt-[3.95rem] border-separate rounded-xl bg-blue px-16 py-[1.25rem] text-center font-700 text-white text-opacity-90 before:absolute before:top-[0.5rem] before:left-0 before:-z-10 before:h-full before:w-full before:rounded-xl before:bg-darkBlue before:opacity-25 md:mt-0"
+        class="relative mt-[3.95rem] rounded-xl bg-blue px-16 py-[1.25rem] text-center font-700 text-white text-opacity-90 before:absolute before:top-[0.5rem] before:left-0 before:-z-10 before:h-full before:w-full before:rounded-xl before:bg-darkBlue before:opacity-25 md:mt-0"
       >
         Try it free 7 days <span class="font-400">then $20/mo. thereafter</span>
       </h2>
@@ -45,14 +45,36 @@
         class="relative mt-[1.5rem] grid w-full rounded-xl bg-white pt-6 before:absolute before:top-[0.5rem] before:left-0 before:-z-10 before:h-full before:w-full before:rounded-xl before:bg-darkBlue before:opacity-25 md:pt-[2.5rem] [&>*]:mx-[1.55rem] md:[&>*]:mx-[2.5rem] [&>input]:mb-4 [&>input]:rounded-md [&>input]:border-2 [&>input]:border-grayishBlue [&>input]:border-opacity-50 [&>input]:py-[1rem] [&>input]:px-[1.1rem] [&>input]:text-sm [&>input]:text-darkBlue [&>input]:placeholder:font-700 [&>input]:placeholder:text-darkBlue [&>input]:placeholder:text-opacity-70 md:[&>input]:mb-[1.27rem] md:[&>input]:px-[1.9rem]"
         action=""
       >
-        <input placeholder="First Name" type="text" />
-        <span></span>
-        <input placeholder="Last Name" type="text" />
-        <span></span>
-        <input placeholder="Email Address" type="text" />
-        <span></span>
-        <input placeholder="Password" type="text" />
-        <span></span>
+        <input class="relative" placeholder="First Name" type="text" />
+        <span
+          class="-mt-4 hidden h-10 text-right text-xs italic text-red brightness-90"
+          >First Name cannot be empty</span
+        >
+
+        <input class="relative" placeholder="Last Name" type="text" />
+        <span
+          class="-mt-4 hidden h-10 text-right text-xs italic text-red brightness-90"
+          >Last Name cannot be empty</span
+        >
+        <input
+          class="relative"
+          placeholder="Email Address"
+          type="email"
+          id="mail"
+          name="mail"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          minlength="8"
+          value=""
+        />
+        <span
+          class="-mt-4 hidden h-10 text-right text-xs italic text-red brightness-90"
+          >Looks like this is not an email</span
+        >
+        <input class="relative" placeholder="Password" type="text" />
+        <span
+          class="-mt-4 hidden h-10 text-right text-xs italic text-red brightness-90"
+          >Password cannot be empty</span
+        >
         <button
           class="relative z-10 overflow-hidden rounded-md bg-green py-4 uppercase text-white before:absolute before:left-0 before:top-[3.2rem] before:-z-10 before:h-full before:w-full before:bg-green before:brightness-90"
         >
