@@ -19,30 +19,30 @@
     <script src="./index.js" defer></script>
   </head>
   <body
-    class="relative grid min-h-screen place-content-start bg-red px-[1.5rem]"
+    class="relative grid min-h-screen place-content-start bg-red px-[1.5rem] md:grid-flow-col md:grid-cols-[auto_auto] md:place-content-center md:gap-2"
   >
-    <header class="pt-[5.65rem]">
+    <header class="max-w-[35rem] pt-[5.65rem] md:self-center md:pt-0">
       <h1
-        class="text-center text-[1.8rem] font-700 leading-[2.3rem] text-white opacity-90"
+        class="text-center text-[1.8rem] font-700 leading-[2.3rem] text-white opacity-90 md:text-left md:text-[3.3rem] md:leading-[3.4rem]"
       >
         Learn to code by watching others
       </h1>
       <p
-        class="pt-[1.35rem] text-center leading-[1.6rem] text-white opacity-80"
+        class="pt-[1.35rem] text-center leading-[1.6rem] text-white opacity-80 md:pt-[2rem] md:text-left"
       >
         See how experienced developers solve problems in real-time. Watching
         scripted tutorials is great, but understanding how developers think is
         invaluable.
       </p>
     </header>
-    <main class="">
+    <main class="md:w-[33.75rem]">
       <h2
-        class="relative mt-[3.95rem] border-separate rounded-xl bg-blue px-16 py-[1.25rem] text-center font-700 text-white text-opacity-90 before:absolute before:top-[0.5rem] before:left-0 before:-z-10 before:h-full before:w-full before:rounded-xl before:bg-darkBlue before:opacity-25"
+        class="relative mt-[3.95rem] border-separate rounded-xl bg-blue px-16 py-[1.25rem] text-center font-700 text-white text-opacity-90 before:absolute before:top-[0.5rem] before:left-0 before:-z-10 before:h-full before:w-full before:rounded-xl before:bg-darkBlue before:opacity-25 md:mt-0"
       >
         Try it free 7 days <span class="font-400">then $20/mo. thereafter</span>
       </h2>
       <form
-        class="relative mt-[1.5rem] grid w-full rounded-xl bg-white pt-6 before:absolute before:top-[0.5rem] before:left-0 before:-z-10 before:h-full before:w-full before:rounded-xl before:bg-darkBlue before:opacity-25 [&>*]:mx-[1.55rem] [&>input]:mb-4 [&>input]:rounded-md [&>input]:border-2 [&>input]:border-grayishBlue [&>input]:border-opacity-50 [&>input]:py-4 [&>input]:px-[1.1rem] [&>input]:text-sm [&>input]:text-darkBlue [&>input]:placeholder:font-700 [&>input]:placeholder:text-darkBlue [&>input]:placeholder:text-opacity-70"
+        class="relative mt-[1.5rem] grid w-full rounded-xl bg-white pt-6 before:absolute before:top-[0.5rem] before:left-0 before:-z-10 before:h-full before:w-full before:rounded-xl before:bg-darkBlue before:opacity-25 md:pt-[2.5rem] [&>*]:mx-[1.55rem] md:[&>*]:mx-[2.5rem] [&>input]:mb-4 [&>input]:rounded-md [&>input]:border-2 [&>input]:border-grayishBlue [&>input]:border-opacity-50 [&>input]:py-[1rem] [&>input]:px-[1.1rem] [&>input]:text-sm [&>input]:text-darkBlue [&>input]:placeholder:font-700 [&>input]:placeholder:text-darkBlue [&>input]:placeholder:text-opacity-70 md:[&>input]:mb-[1.27rem] md:[&>input]:px-[1.9rem]"
         action=""
       >
         <input placeholder="First Name" type="text" />
@@ -59,7 +59,7 @@
           Claim your free trial
         </button>
         <p
-          class="mt-[0.8rem] mb-6 px-4 text-center text-[0.7rem] leading-[1.3rem] text-grayishBlue"
+          class="mt-[0.8rem] mb-6 px-4 text-center text-[0.7rem] leading-[1.3rem] text-grayishBlue md:mb-10"
         >
           By clicking the button, you are agreeing to our
           <span class="font-700 text-red brightness-90"
