@@ -34,7 +34,7 @@ const validateInput = input => {
   }
 
   if (input.type === 'email' && !emailRegExp.test(input.value)) {
-    errorMessage = 'Please provide a valid email';
+    errorMessage = 'Looks like this is not an email';
     setError(input, errorMessage);
     return false;
   }
