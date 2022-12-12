@@ -1,51 +1,91 @@
 const form = document.querySelector('form');
+
+const firstName = document.getElementById('firstName');
+const lastName = document.getElementById('lastName');
 const email = document.getElementById('mail');
-const error = email.nextElementSibling;
+const password = document.getElementById('password');
+
+const inputList = [firstName, lastName, email, password];
 
 const emailRegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const textRegExp = /^[a-zA-Z]*$/;
 
-const setError = errorString => {
-  email.classList.add('invalid-form');
-  error.textContent = errorString;
-  error.classList.remove('hidden');
+const setError = (element, errorString) => {
+  element.classList.add('invalid-form');
+  element.classList.add('invalid-form-icon');
+  element.nextElementSibling.textContent = errorString;
+  element.nextElementSibling.classList.remove('hidden');
 };
 
-const setValidate = () => {
-  email.classList.remove('invalid-form');
-  error.textContent = '';
-  error.classList.add('hidden');
+const setValidate = element => {
+  element.classList.remove('invalid-form');
+  element.classList.remove('invalid-form-icon');
+  element.nextElementSibling.textContent = '';
+  element.nextElementSibling.classList.add('hidden');
 };
 
-const validate = () => {
-  setValidate();
-  window.alert(email.value);
-  email.value = '';
+const validateInput = input => {
+  let errorMessage = ' ';
+
+  if (input.value.length === 0) {
+    errorMessage = `${input.name} cannot be empty`;
+    setError(input, errorMessage);
+    return false;
+  }
+
+  if (input.type === 'email' && !emailRegExp.test(input.value)) {
+    errorMessage = 'Please provide a valid email';
+    setError(input, errorMessage);
+    return false;
+  }
+
+  if (input.type === 'text' && !textRegExp.test(input.value)) {
+    errorMessage = 'Just letters permitted';
+    setError(input, errorMessage);
+    return false;
+  }
+
+  if (input.type === 'password' && input.value.length < 8) {
+    errorMessage = 'Minimum eight characters';
+    setError(input, errorMessage);
+    return false;
+  }
+
+  return true;
 };
 
-email.addEventListener('focus', event => {
-  setValidate();
-});
+const validateAll = () => {
+  inputList.forEach(input => setValidate(input));
 
-email.addEventListener('blur', event => {
-  setValidate();
+  const alertMessage = `
+    First Name: ${firstName.value}
+    Last Name: ${lastName.value}
+    Email: ${email.value}
+    Password: Shhh!, it's a secret ;)
+  `;
+
+  window.alert(alertMessage);
+
+  inputList.forEach(input => (input.value = ''));
+};
+
+inputList.forEach(input => {
+  input.addEventListener('focus', () => {
+    setValidate(input);
+  });
+  input.addEventListener('blur', () => {
+    setValidate(input);
+  });
 });
 
 form.addEventListener('submit', event => {
   event.preventDefault();
 
-  let errorMessage = '';
+  const validations = inputList.map(input => validateInput(input));
 
-  if (email.value.length === 0) {
-    errorMessage = 'Whoops! It looks like you forgot to add your email';
-    setError(errorMessage);
+  if (validations.includes(false)) {
     return;
   }
 
-  if (!emailRegExp.test(email.value)) {
-    errorMessage = 'Please provide a valid email address';
-    setError(errorMessage);
-    return;
-  }
-
-  validate();
+  validateAll();
 });

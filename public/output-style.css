@@ -989,6 +989,10 @@ body {
   line-height: 1.25rem;
 }
 
+.\[\&\>input\]\:font-700>input {
+  font-weight: 700;
+}
+
 .\[\&\>input\]\:text-darkBlue>input {
   --tw-text-opacity: 1;
   color: hsl(249 10% 26% / var(--tw-text-opacity));

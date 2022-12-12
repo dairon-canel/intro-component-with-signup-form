@@ -42,17 +42,38 @@
         Try it free 7 days <span class="font-400">then $20/mo. thereafter</span>
       </h2>
       <form
-        class="relative mt-[1.5rem] grid w-full rounded-xl bg-white pt-6 before:absolute before:top-[0.5rem] before:left-0 before:-z-10 before:h-full before:w-full before:rounded-xl before:bg-darkBlue before:opacity-25 md:pt-[2.5rem] [&>*]:mx-[1.55rem] md:[&>*]:mx-[2.5rem] [&>input]:mb-4 [&>input]:rounded-md [&>input]:border-2 [&>input]:border-grayishBlue [&>input]:border-opacity-50 [&>input]:py-[1rem] [&>input]:px-[1.1rem] [&>input]:text-sm [&>input]:text-darkBlue [&>input]:placeholder:font-700 [&>input]:placeholder:text-darkBlue [&>input]:placeholder:text-opacity-70 md:[&>input]:mb-[1.27rem] md:[&>input]:px-[1.9rem]"
-        action=""
+        class="relative mt-[1.5rem] grid w-full rounded-xl bg-white pt-6 before:absolute before:top-[0.5rem] before:left-0 before:-z-10 before:h-full before:w-full before:rounded-xl before:bg-darkBlue before:opacity-25 md:pt-[2.5rem] [&>*]:mx-[1.55rem] md:[&>*]:mx-[2.5rem] [&>input]:mb-4 [&>input]:rounded-md [&>input]:border-2 [&>input]:border-grayishBlue [&>input]:border-opacity-50 [&>input]:py-[1rem] [&>input]:px-[1.1rem] [&>input]:text-sm [&>input]:font-700 [&>input]:text-darkBlue [&>input]:placeholder:font-700 [&>input]:placeholder:text-darkBlue [&>input]:placeholder:text-opacity-70 md:[&>input]:mb-[1.27rem] md:[&>input]:px-[1.9rem]"
+        id="sign-up-form"
+        method="get"
+        action="./"
+        novalidate
       >
-        <input class="relative" placeholder="First Name" type="text" />
+        <input
+          class="relative"
+          placeholder="First Name"
+          type="text"
+          id="firstName"
+          name="First Name"
+          pattern="^[a-zA-Z]*$"
+          value=""
+        />
         <span
+          aria-live="polite"
           class="-mt-4 hidden h-10 text-right text-xs italic text-red brightness-90"
           >First Name cannot be empty</span
         >
 
-        <input class="relative" placeholder="Last Name" type="text" />
+        <input
+          class="relative"
+          placeholder="Last Name"
+          type="text"
+          id="lastName"
+          name="Last Name"
+          pattern="^[a-zA-Z]*$"
+          value=""
+        />
         <span
+          aria-live="polite"
           class="-mt-4 hidden h-10 text-right text-xs italic text-red brightness-90"
           >Last Name cannot be empty</span
         >
@@ -61,22 +82,35 @@
           placeholder="Email Address"
           type="email"
           id="mail"
-          name="mail"
+          name="Email"
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           minlength="8"
           value=""
         />
         <span
+          aria-live="polite"
           class="-mt-4 hidden h-10 text-right text-xs italic text-red brightness-90"
           >Looks like this is not an email</span
         >
-        <input class="relative" placeholder="Password" type="text" />
+        <input
+          class="relative"
+          placeholder="Password"
+          type="password"
+          id="password"
+          name="Password"
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]$"
+          minlength="8"
+          value=""
+        />
         <span
+          aria-live="polite"
           class="-mt-4 hidden h-10 text-right text-xs italic text-red brightness-90"
           >Password cannot be empty</span
         >
         <button
           class="relative z-10 overflow-hidden rounded-md bg-green py-4 uppercase text-white before:absolute before:left-0 before:top-[3.2rem] before:-z-10 before:h-full before:w-full before:bg-green before:brightness-90"
+          id="submit"
+          type="submit"
         >
           Claim your free trial
         </button>
